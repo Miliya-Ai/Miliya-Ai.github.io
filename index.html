@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='mystylesheet.css'>
+    <meta charset="UTF-8">
+    <title>little introduction</title>
+</head>
+
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li>
+                <img src="assets/logo.png" alt="logo">
+            </li>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li class="dropdown">
+                <a href="#services">Nos services <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                  </svg></a>
+                <div class="dropdown-content">
+                    <a href="#services">Service 1</a>
+                    <a href="#services">Service 2</a>
+                    <a href="#services">Service 3</a>
+                </div>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <h1> 你好，欢迎来到我的网站 </h1>
+    <div>
+        <h2 style="display:inline-block;"> 是什么 </h2>
+
+
+        <div class="instruments">
+            <ul class="img-list">
+                <li id="roche" onclick="jouer('roche')">
+                    <img src="assets/rock1.png" />
+                    <span class="text-content"><span>
+                            <h1>Roche</h1>
+                        </span></span>
+                </li>
+                <li id="papier" onclick="jouer('papier')">
+                    <img src="assets/paper1.png" />
+                    <span class="text-content"><span>
+                            <h1>Papier</h1>
+                        </span></span>
+                </li>
+                <li id="ciseaux" onclick="jouer('ciseaux')">
+                    <img src="assets/scissors1.png" />
+                    <span class="text-content"><span>
+                            <h1>Ciseaux</h1>
+                        </span></span>
+                </li>
+            </ul>
+        </div>
+
+        <h2>为什么</h2>
+
+    </div>
+    <div >
+
+        <div class="container" id="about"></div>
+        <h3 style="display:inline-block;"> 溯源 </h3>
+        <p>似乎是因为几个月前上传在courshero的一篇笔记，收到了一封《––––––邮件<img src="assets/courshero.png" alt="courshero" style="float: left; width: 300px;">
+           虽然并不是特别厉害，但是仍然非常开心，于是便生出了“拯（写）救（点）地（有）球（用）的想（东）法（西）”
+            <br><br>
+            ‘学生们发现你的文章很有用，这里是$5的亚马逊礼品卡‘
+        </p>
+        </div>
+
+        <div class="container" id="about"></div>
+        <h3 style="display:inline-block;"> 追根 </h3>
+        <p>其实非常早就萌生出了写点儿什么东西，分享点儿什么经验的想法，但是无奈不知道什么方式最合适最有用，也曾经想过小🍠weibo公众号，但是觉得和读者之间的互动不够，看完了便是看完了，能不能再有意思一些呢！！( ´▽｀)
+            <br>
+            <b>于是，这个小网站就诞生了</b>
+
+        </p>
+        </div>
+
+        <h2 id="choixOrdi">怎么样</h2>
+
+    </div>
+    <div class="grey">
+        <h2 id="result"></h2> <br>
+        <img id="resultPhoto" src="assets/null.png" /> <br>
+        <input class="myButton" type="button" value="Jouer encore" onClick="window.location.reload()">
+        <br>
+    </div>
+
+    <!-- votre script js va apres cette ligne!  -->
+     
+    <script src="script.js"></script>
+</body>
+
+</html>
