@@ -14,7 +14,7 @@
   <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="icon"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8w5CCb4SMZDL60xAPrzIbSALyPUALC1nGt0MJbcAlQ&s"
+    href="https://avatars.githubusercontent.com/u/102935805?v=4"
     type="image/png">
 </head>
 
@@ -24,7 +24,7 @@
   </div>
   <div id="profile">
     <div id="profile_img"
-      style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8w5CCb4SMZDL60xAPrzIbSALyPUALC1nGt0MJbcAlQ&s) center;">
+      style="background: url(https://avatars.githubusercontent.com/u/102935805?v=4) center;">
     </div>
     <div id="username"><span style="display:block;">Miliya-Ai</span><a
         href="https://github.com/Miliya-Ai">@Miliya-Ai</a>
@@ -251,29 +251,28 @@
   </script>
 
   <script>
-    const magicProjectsGrid = new MagicGrid({
-      container: "#work_section",
-      animate: false,
-      gutter: 30, // default gutter size
-      static: true,
-      useMin: false,
-      maxColumns: 2,
-      useTransform: true
-    });
+    function initGrid(containerSelector) {
+      const container = document.querySelector(containerSelector);
+      if (!container || container.children.length === 0) {
+        return;
+      }
 
-    const magicForksGrid = new MagicGrid({
-      container: "#forks_section",
-      animate: false,
-      gutter: 30, // default gutter size
-      static: true,
-      useMin: false,
-      maxColumns: 2,
-      useTransform: true
-    });
+      const grid = new MagicGrid({
+        container: containerSelector,
+        animate: false,
+        gutter: 30,
+        static: true,
+        useMin: false,
+        maxColumns: 2,
+        useTransform: true
+      });
+
+      grid.listen();
+    }
 
     $("document").ready(() => {
-      magicProjectsGrid.listen();
-      magicForksGrid.listen();
+      initGrid("#work_section");
+      initGrid("#forks_section");
     });
   </script>
 
