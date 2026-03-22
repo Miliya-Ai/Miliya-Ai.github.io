@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Introduction</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../index.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+  <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+  <div id="background_overlay"></div>
+  <div id="background" style="background: url(Hello.png) center;"></div>
+  <table id="profile_blog">
+    <tbody>
+      <tr>
+        <td style="width:8vw;">
+          <div id="profile_img_blog"></div>
+        </td>
+        <td style="width:52vw;">
+          <div id="username_blog"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="blog-display">
+    <h1 id="blog_title">Cover Letter</h1>
+    <h2 id="blog_sub_title">
+      Dear Sir or Madam,
+    </h2>
+    <div id="blog">
+      <p>
+        My name is Miliya Ai, and I graduated from the Université de Montréal in May 2024 with a degree in Computer
+        Science. Passionate about software development, artificial intelligence, and digital technologies, I am eager
+        to contribute my technical skills and am applying for a ML / AI / Full-Stack Software Developer position
+        within your organization.
+      </p>
+      <p>
+        Currently, I work as a Programmer-Analyst at the Student Life Services of the Université de Montréal. In this
+        role, I develop and maintain internal digital tools and AI-based solutions designed to improve operational
+        efficiency. My responsibilities include designing and implementing AI agents and internal automation tools, as
+        well as contributing to the development of a chatbot support system aimed at improving user assistance and
+        service accessibility.
+      </p>
+      <p>
+        In addition to AI development, I am also involved in the maintenance and monitoring of internal systems and
+        services. This includes managing permissions and deployments for several Windows-based applications, monitoring
+        backend services using tools such as app-status, and supporting the automation of tests and deployments
+        through Jenkins pipelines. I also participate in API testing, backend data monitoring, and system reliability
+        verification, ensuring that internal services remain stable and efficient.
+      </p>
+      <p>
+        During my previous professional experiences, I worked as a Programming Analysis Intern at Synapse C, where I
+        developed automated management tools. In the summer of 2023, I completed an internship at the Faculty of Law
+        of the Université de Montréal, where I contributed to the development of an institutional website using Python,
+        Django, Bootstrap, and MySQL, while working within Agile and DevOps environments.
+      </p>
+      <p>
+        In parallel with my studies, I also held several academic roles, including Teaching Assistant, where I
+        supported students during lab sessions, graded assignments, and assisted with exam supervision. I also
+        contributed to web development within a research project on video games led by Neerusha Baurhoo Gokool.
+      </p>
+      <p>
+        Through my academic and professional experiences, I have developed strong skills in Python, Java, and web
+        technologies, along with practical experience in system integration, backend monitoring, and software
+        deployment workflows. My studies also allowed me to deepen my knowledge in computer graphics, advanced web
+        programming, software engineering, data structures, algorithms, and operating systems.
+      </p>
+      <p>
+        Curious, creative, and highly motivated, I particularly enjoy collaborative work and solving complex technical
+        problems. I am especially interested in opportunities at the intersection of artificial intelligence, web
+        technologies, and interactive digital experiences, while continuing to develop my expertise in machine learning
+        and modern software systems.
+      </p>
+      <p>
+        I would be delighted to contribute to your projects and continue developing my skills within your
+        organization. Thank you sincerely for considering my application, and I would welcome the opportunity to
+        further discuss how I could contribute to your team.
+      </p>
+      <p>Yours sincerely,</p>
+      <p>Miliya Ai</p>
+
+    </div>
+  </div>
+  <script type="text/javascript">
+    setTimeout(function () {
+      document.getElementById("loading").classList.add("animated");
+      document.getElementById("loading").classList.add("fadeOut");
+      setTimeout(function () {
+        document.getElementById("loading").classList.remove("animated");
+        document.getElementById("loading").classList.remove("fadeOut");
+        document.getElementById("loading").style.display = "none";
+      }, 800);
+    }, 1500);
+    $.getJSON("../../config.json", function (user) {
+      var icon = document.createElement("link");
+      icon.setAttribute("rel", "icon");
+      icon.setAttribute("href", user[0].userimg);
+      icon.setAttribute("type", "image/png");
+      document.getElementsByTagName("head")[0].appendChild(icon);
+      document.getElementById(
+        "profile_img_blog"
+      ).style.background = `url('${user[0].userimg}') center center`;
+      document.getElementById(
+        "username_blog"
+      ).innerHTML = `<span style="display:${user[0].name == null || !user[0].name ? "none" : "block"
+      };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+      if (user[0].theme === "dark.css") {
+        document.querySelector("#background_overlay").style.background =
+          "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+      } else {
+        document.querySelector("#background_overlay").style.background =
+          "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+      }
+    });
+  </script>
+</body>
+
+</html>
