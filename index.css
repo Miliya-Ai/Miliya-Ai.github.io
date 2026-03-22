@@ -169,6 +169,25 @@ body {
   margin: 5vh 0px;
 }
 
+#blog p.lead {
+  font-size: 19px;
+  line-height: 31px;
+}
+
+#blog strong {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.inline_tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgb(0, 0, 0, 0.12);
+  font-size: 12px;
+  margin-right: 10px;
+}
+
 #blog p span {
   padding: 2px 4px;
   background: var(--text-color);
@@ -321,6 +340,11 @@ body {
   border: 1px solid rgb(0, 0, 0, 0);
   box-shadow: 0px 15px 35px rgb(0, 0, 0, 0.06);
   transform: scale(1.03);
+}
+
+.projects section.private_project {
+  border-style: dashed;
+  background: linear-gradient(145deg, rgba(240, 240, 240, 0.5), rgba(255, 255, 255, 0.9));
 }
 
 .section_title {
